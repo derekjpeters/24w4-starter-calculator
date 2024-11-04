@@ -1,53 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 body {
+  background-color: #e0f7fa; /* Light teal background */
+  color: #333; /* Dark gray for better contrast */
+  font-family: 'Orbitron', sans-serif;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
-  background-color: #f0f0f0;
   margin: 0;
+  overflow: hidden;
 }
 
 .calculator {
-  background-color: #fff;
+  background: linear-gradient(135deg, #ffffff, #e0f2f1); /* Soft gradient for calculator */
+  border: 3px solid #00796b; /* Teal border for contrast */
+  box-shadow: 0 0 15px #00796b;
+  border-radius: 20px;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 380px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .display {
-  font-size: 2em;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  border-radius: 5px;
+  background-color: #004d40; /* Dark teal for display background */
+  border: 2px solid #ff6f00; /* Orange border for high contrast */
+  border-radius: 10px;
+  width: 100%;
+  font-size: 2rem;
+  color: #ffffff; /* White text for contrast */
+  padding: 15px;
+  margin-bottom: 20px;
   text-align: right;
+  box-shadow: 0 0 10px #ff6f00;
+  max-height: 3em;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 12px;
+  width: 100%;
 }
 
 .btn {
-  padding: 20px;
-  font-size: 1.5em;
+  background: linear-gradient(135deg, #ff8f00, #ffa726); /* Bright orange for primary buttons */
   border: none;
-  background-color: #333;
-  color: #fff;
-  border-radius: 5px;
+  color: #ffffff; /* White text for high contrast */
+  font-size: 1.2rem;
+  border-radius: 8px;
+  padding: 15px;
   cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #555;
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #ffa726, #ffcc80); /* Lightened orange on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-clear {
-  background-color: #28a745;
+  grid-column: span 1;
+  background: linear-gradient(135deg, #00796b, #004d40); /* Bright teal for clear button */
+  color: #ffffff; /* White text */
 }
 
 .btn-clear:hover {
-  background-color: #218838;
+  background: linear-gradient(135deg, #009688, #00796b); /* Lightened teal on hover */
+}
+
+.btn-scientific {
+  font-size: 1rem;
+  padding: 12px;
+  background: linear-gradient(135deg, #004d40, #00796b); /* Dark teal for scientific buttons */
+  color: #ff6f00; /* Bright orange text for contrast */
+}
+
+.btn-scientific:hover {
+  background: linear-gradient(135deg, #00695c, #004d40);
 }
